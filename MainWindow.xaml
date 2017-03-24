@@ -1,0 +1,46 @@
+﻿<Window x:Class="UIForLocalizationConsecutiveApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UIForLocalizationConsecutiveApplication"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="1500" Name="_window_">
+    <Grid>
+        <Image x:Name="image" Margin="740,0,0,0" Height="750" Width="750" 
+               Stretch="Fill" IsHitTestVisible="True"/>
+        <Canvas x:Name="BackPanel" Margin = "740,0,0,0" 
+                Height="750" Width="750" IsHitTestVisible="True" MouseDown="image_MouseDown" 
+                MouseUp="image_MouseUp" MouseMove="image_MouseMove"/>
+        <TextBox x:Name="X" HorizontalAlignment="Left" Height="29" Margin="324,142,0,0" TextWrapping="Wrap" Text="0" 
+                 VerticalAlignment="Top" Width="193"  />
+        <TextBox x:Name="Y" HorizontalAlignment="Left" Height="31" Margin="324,176,0,0" TextWrapping="Wrap" Text="0" 
+                 VerticalAlignment="Top" Width="193" />
+        <TextBox x:Name ="_width" HorizontalAlignment="Left" Height="30" Margin="324,212,0,0" TextWrapping="Wrap" Text="0" 
+                 VerticalAlignment="Top" Width="193"/>
+        <TextBox x:Name ="_height" HorizontalAlignment="Left" Height="30" Margin="324,247,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="193"/>
+        <Label Content="UpperCorner x (px)" HorizontalAlignment="Left" Height="29" Margin="176,142,0,0" VerticalAlignment="Top" Width="143"/>
+        <Label Content="UpperCorner y (px)" HorizontalAlignment="Left" Height="31" Margin="176,176,0,0" VerticalAlignment="Top" Width="143"/>
+        <Label Content="Width (px)" HorizontalAlignment="Left" Height="30" Margin="176,212,0,0" VerticalAlignment="Top" Width="143"/>
+        <Label Content="Height (px)" HorizontalAlignment="Left" Height="30" Margin="176,247,0,0" VerticalAlignment="Top" Width="143"/>
+        <TextBox x:Name="Console" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" HorizontalAlignment="Left" Margin="0,404,0,0" 
+                 TextWrapping="Wrap" Text="Console >" Foreground="Wheat" FontSize="15" Width="698" Background="Black"/>
+        <Button Content="Send Coordination and Process" Height="47" Margin="10,81,0,0" VerticalAlignment="Top" 
+                HorizontalAlignment="Left" Width="672" Click="SendButton"/>
+        <Button Content="Browse ..." HorizontalAlignment="Left" Height="47" 
+                Margin="10,29,0,0" VerticalAlignment="Top" Width="672" Click="OpenFileDialog_Click"/>
+        <Rectangle Fill="#FF000000" HorizontalAlignment="Left" Margin="698,0,0,0" Stroke="Black" Width="7"/>
+        <Button x:Name="cleanEntire" Content="Clean the entire ROIs from image" Height="34" 
+                Margin="10,324,0,0" VerticalAlignment="Top" Click ="CleanImageEntirely" HorizontalAlignment="Left" Width="672"/>
+        <Label Content="Designed By: Iman Abdollahzadeh" HorizontalAlignment="Left" 
+               Height="28" VerticalAlignment="Top" Width="682" FontSize="12" FontStyle="Italic" FontWeight="Bold"/>
+        <Button Content="Clean last ROI from image" Height="34" Margin="10,365,0,0" 
+                VerticalAlignment="Top" Click ="CleanImageLastROI" HorizontalAlignment="Left" Width="672"/>
+        <Button Content="Clean Console" HorizontalAlignment="Left" Margin="610,0,0,3" Width="85" 
+                Click="CleanConsole" Background="Yellow" Opacity="0.8" Height="30" VerticalAlignment="Bottom"/>
+        <Button Content="Clean Image" Margin="0,0,1,3" Click="CleanImageAndSetToNull" 
+                Background="Yellow" Opacity="0.8" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="85"/>
+        <Button Content="Info." Margin="0,0,91,3" Click="GiveInformation"
+            Background="Yellow" Opacity="0.8" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="85"/>
+    </Grid>
+</Window>
