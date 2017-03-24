@@ -18,7 +18,7 @@
 			*CopyOf_ROI_By_Coordination = nullptr, 
 			*ROI_By_Coordination        = nullptr;
 			double* X     = nullptr, 
-				  * Y     = nullptr;
+			      * Y     = nullptr;
 			int   * frame = nullptr;
 			double x_LineByLine, y_LineByLine;
 			int   frame_LineByLine;
