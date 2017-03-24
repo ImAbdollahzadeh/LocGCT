@@ -81,7 +81,8 @@ InitialArgumentsExtractionFromTextFile::
 ~InitialArgumentsExtractionFromTextFile()
 {
 	fclose(fp);
-	free(Address);
+	if(Addres != nullptr)
+		free(Address);
 	Address = nullptr;
 	std::cout << "resource cleaned" << std::endl;
 }
