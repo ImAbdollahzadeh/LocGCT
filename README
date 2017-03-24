@@ -1,5 +1,8 @@
 #
 LocGCT is abbreviation for Localization; Grouping; Clustering; Tracking.
-This software analyze Super Resolution microscopy localization data and analyze them.
+This software analyze Super Resolution microscopy 
+localization data and analyze them.
 
-Every localization data has its frame number, xy coordination and intensity. These parameters have been taken by using SNSMIL software output.
+Every localization data has its frame number, 
+xy coordination and intensity. These parameters have been 
+taken by using SNSMIL software output.
