@@ -18,7 +18,7 @@ void LocalizationCounter::LocsInROI (
 	{
 		if (X[loop_counter] >= ROI_X_Coordinate && X[loop_counter] <= (ROI_X_Coordinate + (double)(width))
 			&& Y[loop_counter] >= ROI_Y_Coordinate && Y[loop_counter] <= (ROI_Y_Coordinate + (double)(height))
-			)
+		)
 		{
 			ROI_By_Coordination[FinalStructCounter] = { X[loop_counter], Y[loop_counter], frame[loop_counter] };
 			++FinalStructCounter;
@@ -28,8 +28,8 @@ void LocalizationCounter::LocsInROI (
 	ROI_By_Coordination[FinalStructCounter] = { -1, -1, -10 }; // terminating condition
 	void* i = ROI_By_Coordination;
 	void* j = CopyOf_ROI_By_Coordination;
-	while (((FinalArray*)i)->_x_ != -1
-		&& ((FinalArray*)i)->_y_ != -1
+	while (((FinalArray*)i)->_x_       != -1
+		&& ((FinalArray*)i)->_y_   != -1
 		&& ((FinalArray*)i)->_frm_ != -10
 	)
 	{
@@ -37,8 +37,8 @@ void LocalizationCounter::LocsInROI (
 		i = (char*)i + sizeof(FinalArray);
 		j = (char*)j + sizeof(FinalArray);
 	}
-	((FinalArray*)j)->_x_ = -1;
-	((FinalArray*)j)->_y_ = -1;
+	((FinalArray*)j)->_x_   = -1;
+	((FinalArray*)j)->_y_   = -1;
 	((FinalArray*)j)->_frm_ = -10;
 	std::cout << "Finding Locs in the provided ROI completed!\n";
 	return;
@@ -51,8 +51,8 @@ void LocalizationCounter::GenerateOutputTextFile(const char* _address) noexcept
 	roiGeneratedLocsOutputTextFile << "All Counts = " << LocCountsAfterROI << '\n';
 	roiGeneratedLocsOutputTextFile << "Refined Counts = " << 0x00 << '\n';
 	roiGeneratedLocsOutputTextFile << "-----------------------------------\n";
-	while ((ROI_By_Coordination[tempCounter])._x_ != -1
-		&& (ROI_By_Coordination[tempCounter])._y_ != -1
+	while ((ROI_By_Coordination[tempCounter])._x_       != -1
+		&& (ROI_By_Coordination[tempCounter])._y_   != -1
 		&& (ROI_By_Coordination[tempCounter])._frm_ != -10
 	)
 	{
@@ -78,8 +78,8 @@ void LocalizationCounter::GenerateGroupedByCoordinationOutputTextFile (
 	MovingPointer = (char*)ROI_By_Coordination + sizeof(FinalArray);
 	std::fstream RefinedroiGeneratedLocsOutputTextFile;
 	RefinedroiGeneratedLocsOutputTextFile.open(_address, std::ios::out);
-	while (((FinalArray*)StartPointer)->_x_ != -1
-		&& ((FinalArray*)StartPointer)->_y_ != -1
+	while (((FinalArray*)StartPointer)->_x_       != -1
+		&& ((FinalArray*)StartPointer)->_y_   != -1
 		&& ((FinalArray*)StartPointer)->_frm_ != -10
 	)
 	{
@@ -87,8 +87,8 @@ void LocalizationCounter::GenerateGroupedByCoordinationOutputTextFile (
 			((FinalArray*)(StartPointer))->_x_ << "\ty(px): " <<
 			((FinalArray*)(StartPointer))->_y_ << "\tframe: " <<
 			((FinalArray*)(StartPointer))->_frm_ << '\n';
-		while (((FinalArray*)MovingPointer)->_x_ != -1
-			&& ((FinalArray*)MovingPointer)->_y_ != -1
+		while (((FinalArray*)MovingPointer)->_x_       != -1
+			&& ((FinalArray*)MovingPointer)->_y_   != -1
 			&& ((FinalArray*)MovingPointer)->_frm_ != -10
 		)
 		{
@@ -102,8 +102,8 @@ void LocalizationCounter::GenerateGroupedByCoordinationOutputTextFile (
 					((FinalArray*)(MovingPointer))->_y_ << "\tframe: " <<
 					((FinalArray*)(MovingPointer))->_frm_ << '\n';
 				// dumping condition
-				((FinalArray*)MovingPointer)->_x_ = -2;
-				((FinalArray*)MovingPointer)->_y_ = -2;
+				((FinalArray*)MovingPointer)->_x_   = -2;
+				((FinalArray*)MovingPointer)->_y_   = -2;
 				((FinalArray*)MovingPointer)->_frm_ = -20;
 				MovingPointer = (char*)MovingPointer + sizeof(FinalArray);
 			}
@@ -113,8 +113,8 @@ void LocalizationCounter::GenerateGroupedByCoordinationOutputTextFile (
 			}
 		}
 		StartPointer = (char*)StartPointer + sizeof(FinalArray);
-		while (((FinalArray*)StartPointer)->_x_ == -2
-			&& ((FinalArray*)StartPointer)->_y_ == -2
+		while (((FinalArray*)StartPointer)->_x_       == -2
+			&& ((FinalArray*)StartPointer)->_y_   == -2
 			&& ((FinalArray*)StartPointer)->_frm_ == -20
 		)
 		{
@@ -144,8 +144,8 @@ void LocalizationCounter::GenerateGroupedByCoordination_and_FrameDarkTimeOutputT
 	int internal_frm = ((FinalArray*)(StartPointer))->_frm_;
 	std::fstream RefinedroiGeneratedLocsOutputTextFile;
 	RefinedroiGeneratedLocsOutputTextFile.open(_address, std::ios::out);
-	while (((FinalArray*)StartPointer)->_x_ != -1
-		&& ((FinalArray*)StartPointer)->_y_ != -1
+	while (((FinalArray*)StartPointer)->_x_       != -1
+		&& ((FinalArray*)StartPointer)->_y_   != -1
 		&& ((FinalArray*)StartPointer)->_frm_ != -10
 	)
 	{
@@ -153,8 +153,8 @@ void LocalizationCounter::GenerateGroupedByCoordination_and_FrameDarkTimeOutputT
 			((FinalArray*)(StartPointer))->_x_ << "\ty(px): " <<
 			((FinalArray*)(StartPointer))->_y_ << "\tframe: " <<
 			((FinalArray*)(StartPointer))->_frm_ << '\n';
-		while (((FinalArray*)MovingPointer)->_x_ != -1
-			&& ((FinalArray*)MovingPointer)->_y_ != -1
+		while (((FinalArray*)MovingPointer)->_x_       != -1
+			&& ((FinalArray*)MovingPointer)->_y_   != -1
 			&& ((FinalArray*)MovingPointer)->_frm_ != -10
 		)
 		{
@@ -171,8 +171,8 @@ void LocalizationCounter::GenerateGroupedByCoordination_and_FrameDarkTimeOutputT
 						((FinalArray*)(MovingPointer))->_frm_ << '\n';
 					internal_frm = ((FinalArray*)MovingPointer)->_frm_;
 					// dumping condition
-					((FinalArray*)MovingPointer)->_x_ = -2;
-					((FinalArray*)MovingPointer)->_y_ = -2;
+					((FinalArray*)MovingPointer)->_x_   = -2;
+					((FinalArray*)MovingPointer)->_y_   = -2;
 					((FinalArray*)MovingPointer)->_frm_ = -20;
 					MovingPointer = (char*)MovingPointer + sizeof(FinalArray);
 				}
@@ -187,8 +187,8 @@ void LocalizationCounter::GenerateGroupedByCoordination_and_FrameDarkTimeOutputT
 			}
 		}
 		StartPointer = (char*)StartPointer + sizeof(FinalArray);
-		while (((FinalArray*)StartPointer)->_x_ == -2
-			&& ((FinalArray*)StartPointer)->_y_ == -2
+		while (((FinalArray*)StartPointer)->_x_       == -2
+			&& ((FinalArray*)StartPointer)->_y_   == -2
 			&& ((FinalArray*)StartPointer)->_frm_ == -20
 		)
 		{
